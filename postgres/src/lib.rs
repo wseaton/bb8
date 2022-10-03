@@ -65,7 +65,7 @@ where
     }
 
     async fn is_valid(&self, conn: &mut Self::Connection) -> Result<(), Self::Error> {
-        conn.simple_query("").await.map(|_| ())
+        conn.simple_query("select 1;").await.map(|_| ())
     }
 
     fn has_broken(&self, conn: &mut Self::Connection) -> bool {
